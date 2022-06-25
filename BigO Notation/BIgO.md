@@ -9,8 +9,8 @@ O - Worst Case Scenario
 ### Vocabulary
 
 **algorithm:** A sequence of steps that solves a problem.
-run time: The amount of time it takes your computer to execute an algorithm written in a program-
-ming language like Python.
+
+**run time**: The amount of time it takes your computer to execute an algorithm written in a programming language like Javascript.
 
 **size of the problem**: The variable n in an equation that describes the number of steps in an algorithm.
 
@@ -45,3 +45,7 @@ quadratic time and a = 3 for cubic time.
 problem’s size.
 
 **brute-­force algorithm**: A type of algorithm that tests every possible option.
+
+#### Complexity Chart
+
+![Complexity Chart Image]('../../imgs/complexity-types-codemio.png)
