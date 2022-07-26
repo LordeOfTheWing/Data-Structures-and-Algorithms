@@ -90,6 +90,31 @@ class LinkedList {
     return removedNode.value;
   }
 
+  removeValue(value) {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    if (this.head.value === value) {
+      this.head = this.head.next;
+      this.size--;
+      return value;
+    } else {
+      let prev = this.head;
+      while (prev.next && prev.next.value !== value) {
+        prev = prev.next;
+      }
+
+      if (prev.next) {
+        let removedNode = prev.next;
+        prev.next = removedNode.next;
+        this.size--;
+        return value;
+      }
+      return null;
+    }
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log("List is empty");
@@ -115,6 +140,7 @@ linkedList.append(50);
 linkedList.append(60);
 linkedList.insert(44, 1);
 console.log(linkedList.removeFrom(0));
+console.log(linkedList.removeValue(40));
 linkedList.print();
 console.log("List is empty? ", linkedList.isEmpty());
 console.log("List size:", linkedList.getSize());
