@@ -106,3 +106,5 @@ console.log(linkedList.removeFromEnd());
 console.log(linkedList.size);
 console.log(linkedList.isEmpty());
 linkedList.print();
+
+module.exports = { LinkedList };
