@@ -111,6 +111,34 @@ class BinarySearchTree {
       return this.max(root.right);
     }
   }
+
+  delete(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+
+  deleteNode(root, value) {
+    if (root === null) {
+      return root;
+    }
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      if (!root.left && !root.right) {
+        return null;
+      }
+      if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.right;
+      } else {
+        root.value = this.min(root.right);
+        root.right = this.deleteNode(root.right, root.value);
+      }
+    }
+    return root;
+  }
 }
 
 const BST = new BinarySearchTree();
@@ -119,7 +147,8 @@ BST.insert(5);
 BST.insert(15);
 BST.insert(3);
 BST.insert(7);
-
+BST.delete(15);
+BST.breadFirstSearch();
 console.log(BST.search(BST.root, 15));
 BST.preOrder(BST.root);
 BST.inOrder(BST.root);
