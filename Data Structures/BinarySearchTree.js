@@ -51,8 +51,30 @@ class BinarySearchTree {
       } else {
         return this.search(root.right, value);
       }
-      {
-      }
+    }
+  }
+
+  preOrder(root) {
+    if (root) {
+      console.log(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
+
+  inOrder(root) {
+    if (root) {
+      this.inOrder(root.left);
+      console.log(root.value);
+      this.inOrder(root.right);
+    }
+  }
+
+  postOrder(root) {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.log(root.value);
     }
   }
 }
@@ -61,5 +83,11 @@ const BST = new BinarySearchTree();
 BST.insert(10);
 BST.insert(5);
 BST.insert(15);
+BST.insert(3);
+BST.insert(7);
+
 console.log(BST.search(BST.root, 15));
+BST.preOrder(BST.root);
+BST.inOrder(BST.root);
+BST.postOrder(BST.root);
 console.log("Is tree empty?", BST.isEmpty());
