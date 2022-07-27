@@ -39,10 +39,27 @@ class BinarySearchTree {
       }
     }
   }
+
+  search(root, value) {
+    if (!root) {
+      return false;
+    } else {
+      if (root.value === value) {
+        return true;
+      } else if (value < root.value) {
+        return this.search(root.left, value);
+      } else {
+        return this.search(root.right, value);
+      }
+      {
+      }
+    }
+  }
 }
 
 const BST = new BinarySearchTree();
 BST.insert(10);
 BST.insert(5);
 BST.insert(15);
+console.log(BST.search(BST.root, 15));
 console.log("Is tree empty?", BST.isEmpty());
