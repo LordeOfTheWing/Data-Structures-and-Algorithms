@@ -95,6 +95,22 @@ class BinarySearchTree {
       }
     }
   }
+
+  min(root) {
+    if (root.left === null) {
+      return root.value;
+    } else {
+      return this.min(root.left);
+    }
+  }
+
+  max(root) {
+    if (root.right === null) {
+      return root.value;
+    } else {
+      return this.max(root.right);
+    }
+  }
 }
 
 const BST = new BinarySearchTree();
@@ -109,4 +125,6 @@ BST.preOrder(BST.root);
 BST.inOrder(BST.root);
 BST.postOrder(BST.root);
 BST.breadFirstSearch();
+console.log(BST.min(BST.root));
+console.log(BST.max(BST.root));
 console.log("Is tree empty?", BST.isEmpty());
