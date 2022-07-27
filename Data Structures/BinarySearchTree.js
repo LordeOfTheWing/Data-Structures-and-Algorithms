@@ -77,6 +77,24 @@ class BinarySearchTree {
       console.log(root.value);
     }
   }
+
+  breadFirstSearch() {
+    const queue = [];
+    queue.push(this.root);
+
+    while (queue.length) {
+      let currentNode = queue.shift();
+      console.log(currentNode.value);
+
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+    }
+  }
 }
 
 const BST = new BinarySearchTree();
@@ -90,4 +108,5 @@ console.log(BST.search(BST.root, 15));
 BST.preOrder(BST.root);
 BST.inOrder(BST.root);
 BST.postOrder(BST.root);
+BST.breadFirstSearch();
 console.log("Is tree empty?", BST.isEmpty());
