@@ -15,3 +15,12 @@ function fibonacci(n) {
 console.log(fibonacci(2));
 console.log(fibonacci(3));
 console.log(fibonacci(7));
+
+function recursiveFibonacci(n) {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+}
+
+console.log(recursiveFibonacci(7));
