@@ -40,3 +40,19 @@ console.log(anagram("heart", "earth"));
 console.log(anagram("heart", "  earth"));
 console.log(anagram("Heart!", "EARTH"));
 console.log(anagram("lol", "lolc"));
+
+function anagram2(stringA, stringB) {
+  //Sanitize the input strings
+  stringA = stringA.toLowerCase().replace(/[\W_]+/g, "");
+  stringB = stringB.toLowerCase().replace(/[\W_]+/g, "");
+
+  const stringASorted = stringA.split("").sort().join("");
+  const stringBSorted = stringB.split("").sort().join("");
+
+  return stringASorted === stringBSorted;
+}
+
+console.log(anagram2("heart", "earth"));
+console.log(anagram2("heart", "  earth"));
+console.log(anagram2("Heart!", "EARTH"));
+console.log(anagram2("lol", "lolc"));
